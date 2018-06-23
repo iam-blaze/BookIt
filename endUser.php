@@ -6,7 +6,7 @@ $seat = filter_input(INPUT_POST, 'seat');
 $bus_num = filter_input(INPUT_POST, 'bus_num');
 $date = filter_input(INPUT_POST, 'date');
 
-$con = mysqli_connect("localhost","root","","BookMe");
+$con = mysqli_connect("localhost","root","","BookIt");
 
 $result = mysqli_query($con,"select * from user_table where id='$id'") or die(mysql_error());
 $row = mysqli_fetch_array($result);

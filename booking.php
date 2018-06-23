@@ -3,7 +3,7 @@ session_start();
 $id = $_SESSION['id'];
 $_SESSION['id'] = $id;
 
-$con = mysqli_connect("localhost","root","","BookMe");
+$con = mysqli_connect("localhost","root","","BookIt");
 
 $result = mysqli_query($con,"select * from user_table where id='$id'") or die(mysql_error());
 $row = mysqli_fetch_array($result);
@@ -15,7 +15,7 @@ if($row ['id']!=$id || $row ['status']!=1)
 <!DOCTYPE html>
 <html>
 <head>
-<title>BookMe - Book Here</title>
+<title>BookIt - Book Here</title>
 <!-- Custom Theme files -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -33,11 +33,11 @@ if($row ['id']!=$id || $row ['status']!=1)
 <!-- fonts -->
 <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,700,500italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
-<!-- //fonts -->	
+<!-- //fonts -->
 <script type="text/javascript">
 		$(document).ready(function () {
 			$('#horizontalTab').easyResponsiveTabs({
-				type: 'default', //Types: default, vertical, accordion           
+				type: 'default', //Types: default, vertical, accordion
 				width: 'auto', //auto or any width like 600px
 				fit: true   // 100% fit in a container
 			});
@@ -45,7 +45,7 @@ if($row ['id']!=$id || $row ['status']!=1)
 	</script>
 <!--pop-up-->
 <script src="js/menu_jquery.js"></script>
-<!--//pop-up-->	
+<!--//pop-up-->
 </head>
 <body>
 	<!--header-->
@@ -53,14 +53,14 @@ if($row ['id']!=$id || $row ['status']!=1)
 		<div class="container">
 			<div class="header-grids">
 				<div class="logo">
-					<h1><a  href="index.html"><span>BookMe</span></a></h1>
+					<h1><a  href="index.html"><span>BookIt</span></a></h1>
 				</div>
 				<!--navbar-header-->
 				<div class="header-dropdown">
 					<div class="emergency-grid">
 						<ul>
 							<li><div id="loginContainer"><a href="#" id="loginButton"><span>Login</span></a>
-							<div id="loginBox">                
+							<div id="loginBox">
                                                             <form action="signindb.php" method="POST" id="loginForm">
 									<div class="login-grids">
 										<div class="login-grid-left">
@@ -100,7 +100,7 @@ if($row ['id']!=$id || $row ['status']!=1)
 					</div>
 				</div>
 			</div>
-			
+
 		</div>
 	</div>
 	<!--//header-->
@@ -121,7 +121,7 @@ if($row ['id']!=$id || $row ['status']!=1)
 								<p>Password</p>
 								<input type="password" name="password" id="password">
 								<input type="submit" id="login" value="Sign in">
-                                                               
+
                                                     </form>
                                                     <form action="signup.html" method="POST">
                                                                 <input type="submit" value="New To Us?">
@@ -160,16 +160,16 @@ if($row ['id']!=$id || $row ['status']!=1)
 	</div>
 	<!-- //banner-bottom -->
 	<!-- footer -->
-	
+
 	<!-- //footer -->
 	<div class="footer-bottom-grids">
 		<!-- container -->
 		<div class="container">
 				<div class="footer-bottom-top-grids">
-					
+
 					<div class="clearfix"> </div>
 					<div class="copyright">
-						<p>Copyrights © BookMe by Glosys technologies</p>
+						<p>Copyrights © BookIt by Old technologies</p>
 					</div>
 				</div>
 		</div>
@@ -190,7 +190,7 @@ if($row ['id']!=$id || $row ['status']!=1)
 			}
 			});
 		});
-	</script>		
+	</script>
 </body>
 </html>
 <?php

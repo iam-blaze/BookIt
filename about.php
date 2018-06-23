@@ -3,7 +3,7 @@ session_start();
 $id = $_SESSION['id'];
 $_SESSION['id'] = $id;
 
-$con = mysqli_connect("localhost","root","","BookMe");
+$con = mysqli_connect("localhost","root","","BookIt");
 
 $result = mysqli_query($con,"select * from user_table where id='$id'") or die(mysql_error());
 $row = mysqli_fetch_array($result);
@@ -16,7 +16,7 @@ if($row ['id']==$id && $row ['status']==1)
 <!DOCTYPE html>
 <html>
 <head>
-<title>BookMe - Lets Book Something</title>
+<title>BookIt - Lets Book Something</title>
 <!-- Custom Theme files -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -34,11 +34,11 @@ if($row ['id']==$id && $row ['status']==1)
 <!-- fonts -->
 <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,700,500italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
-<!-- //fonts -->	
+<!-- //fonts -->
 <script type="text/javascript">
 		$(document).ready(function () {
 			$('#horizontalTab').easyResponsiveTabs({
-				type: 'default', //Types: default, vertical, accordion           
+				type: 'default', //Types: default, vertical, accordion
 				width: 'auto', //auto or any width like 600px
 				fit: true   // 100% fit in a container
 			});
@@ -46,7 +46,7 @@ if($row ['id']==$id && $row ['status']==1)
 	</script>
 <!--pop-up-->
 <script src="js/menu_jquery.js"></script>
-<!--//pop-up-->	
+<!--//pop-up-->
 </head>
 <body>
 	<!--header-->
@@ -54,7 +54,7 @@ if($row ['id']==$id && $row ['status']==1)
 		<div class="container">
 			<div class="header-grids">
 				<div class="logo">
-					<h1><a  href="index.html"><span>BookMe</span></a></h1>
+					<h1><a  href="index.html"><span>BookIt</span></a></h1>
 				</div>
 				<!--navbar-header-->
 				<div class="header-dropdown">
@@ -76,20 +76,20 @@ if($row ['id']==$id && $row ['status']==1)
 			<div class="nav-top">
 				<div class="top-nav">
 					<span class="menu"><img src="images/menu.png" alt="" /></span>
-					<ul class="nav1">						
+					<ul class="nav1">
 						<li><a href="newRide.php">New Ride</a></li>
-						<li><a href="history.php">History</a></li>						
+						<li><a href="history.php">History</a></li>
 						<li class="active"><a href="about.php">About Us</a></li>
 					</ul>
 					<div class="clearfix"> </div>
 					<!-- script-for-menu -->
-							 <script> 
+							 <script>
 							   $( "span.menu" ).click(function() {
 								 $( "ul.nav1" ).slideToggle( 300, function() {
 								 // Animation complete.
 								  });
 								 });
-							
+
 							</script>
 						<!-- /script-for-menu -->
 				</div>
@@ -99,10 +99,10 @@ if($row ['id']==$id && $row ['status']==1)
 	<!--//header-->
 	<!-- banner-bottom -->
 		<!-- container -->
-		
+
             <div class="container">
 			<div class="about-info">
-				<h2>A brief history of Glosys Technologies</h2>
+				<h2>A brief history of Old Technologies</h2>
 			</div>
 			<div class="about-grids">
 				<div class="col-md-8 about-left">
@@ -110,7 +110,7 @@ if($row ['id']==$id && $row ['status']==1)
 					<p></p>
 				</div>
 				<div class="col-md-4 about-right">
-                                    <img src="glosys.jpg" alt="" />
+                                    <img src="old.png" alt="" />
 				</div>
 			</div>
 		</div>
@@ -121,13 +121,13 @@ if($row ['id']==$id && $row ['status']==1)
 	<div class="footer-bottom-grids">
 		<!-- container -->
 		<div class="container">
-				
+
 					<div class="clearfix"> </div>
 					<div class="copyright">
-						<p>Copyrights © BookMe by Glosys technologies</p>
+						<p>Copyrights © BookIt by Old technologies</p>
 					</div>
 				</div>
-		</div>	
+		</div>
 	<script defer src="js/jquery.flexslider.js"></script>
 	<script src="js/easyResponsiveTabs.js" type="text/javascript"></script>
 	<script src="js/jquery-ui.js"></script>
@@ -144,7 +144,7 @@ if($row ['id']==$id && $row ['status']==1)
 			}
 			});
 		});
-	</script>		
+	</script>
 </body>
 </html>
 <?php

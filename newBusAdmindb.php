@@ -4,7 +4,7 @@ $id = $_SESSION['id'];
 $_SESSION['id'] = $id;
 $from_table = $_SESSION['from_table'];
 
-$con = mysqli_connect("localhost","root","","BookMe");
+$con = mysqli_connect("localhost","root","","BookIt");
 
 $result = mysqli_query($con,"select * from user_table where id='$id'") or die(mysql_error());
 $row = mysqli_fetch_array($result);
@@ -27,7 +27,7 @@ if($row ['id']==$id && $row ['status']==1)
      
      $cost=$_POST['cost'];
                  
-            $sql="INSERT INTO `BookMe`.`$from_table` ( `bus_num`, `bus_name`, `bus_type`, `ph_no`, `from_table`, `destination`, `date`, `start_time`, `end_time`, `rating`,`seat`,`cost`) VALUES ($bus_num', '$name', '$type', '$ph_no', '$from_table', '$des', '$date', '$start', '$end', '$rating','$rn','$cost')";
+            $sql="INSERT INTO `BookIt`.`$from_table` ( `bus_num`, `bus_name`, `bus_type`, `ph_no`, `from_table`, `destination`, `date`, `start_time`, `end_time`, `rating`,`seat`,`cost`) VALUES ($bus_num', '$name', '$type', '$ph_no', '$from_table', '$des', '$date', '$start', '$end', '$rating','$rn','$cost')";
             mysqli_query($con, $sql);
             mysqli_query($con,$insert_image);
             echo "<script type='text/javascript'>if (confirm('Bus Added successfully') == true) {window.location = \"newRide.php\"}</script>";

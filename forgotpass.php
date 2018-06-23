@@ -5,7 +5,7 @@ if(isset($_POST['forgot'])) {
 	$password = $_POST['password'];
 	$password2 = $_POST['password2'];
 	
-	$con = mysqli_connect("localhost","root","","BookMe") or die (mysql_error());	
+	$con = mysqli_connect("localhost","root","","BookIt") or die (mysql_error());	
 	$result = mysqli_query($con,"select * from user_table where id='$id' and Ph_no = '$Ph_no'") or die("unable to login please try again".mysql_error());
 	$row = mysqli_fetch_array($result);
 	
@@ -33,7 +33,7 @@ if(isset($_POST['forgot'])) {
 <!DOCTYPE html>
 <html>
 <head>
-<title>BookMe - New User</title>
+<title>BookIt - New User</title>
 <!-- Custom Theme files -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -72,7 +72,7 @@ if(isset($_POST['forgot'])) {
 			<div class="container">
 			<div class="header-grids">
 				<div class="logo">
-					<h1><a  href="index.html"><span>BookMe</span></a></h1>
+					<h1><a  href="index.html"><span>BookIt</span></a></h1>
 				</div>
 				<!--navbar-header-->
 				<div class="header-dropdown">
@@ -186,7 +186,7 @@ if(isset($_POST['forgot'])) {
 					
 					<div class="clearfix"> </div>
 					<div class="copyright">
-						<p>Copyrights © BookMe by Glosys technologies</p>
+						<p>Copyrights © BookIt by Old technologies</p>
 					</div>
 				</div>
 		</div>

@@ -3,7 +3,7 @@ session_start();
 $id = $_SESSION['id'];
 $_SESSION['id'] = $id;
 
-$con = mysqli_connect("localhost","root","","BookMe");
+$con = mysqli_connect("localhost","root","","BookIt");
 
 $result = mysqli_query($con,"select * from user_table where id='$id'") or die(mysql_error());
 $row = mysqli_fetch_array($result);
@@ -21,7 +21,7 @@ if($row ['id']==$id && $row ['status']==1)
 <!DOCTYPE html>
 <html>
 <head>
-<title>BookMe - Lets Book Something</title>
+<title>BookIt - Lets Book Something</title>
 <!-- Custom Theme files -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -59,7 +59,7 @@ if($row ['id']==$id && $row ['status']==1)
 		<div class="container">
 			<div class="header-grids">
 				<div class="logo">
-					<h1><a  href="index.html"><span>BookMe</span></a></h1>
+					<h1><a  href="index.html"><span>BookIt</span></a></h1>
 				</div>
 				<!--navbar-header-->
 				<div class="header-dropdown">
@@ -163,7 +163,7 @@ if($row ['id']==$id && $row ['status']==1)
 
 					<div class="clearfix"> </div>
 					<div class="copyright">
-						<p>Copyrights © BookMe by an old technologies</p>
+						<p>Copyrights © BookIt by an old technologies</p>
 					</div>
 				</div>
 		</div>

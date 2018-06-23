@@ -5,7 +5,7 @@ $_SESSION['id'] = $id;
 $bus_num=$_SESSION['bus_num'];
 $from_table=$_SESSION['from_table'];
 
-$con = mysqli_connect("localhost","root","","BookMe");
+$con = mysqli_connect("localhost","root","","BookIt");
 
 $result = mysqli_query($con,"select * from user_table where id='$id'") or die(mysql_error());
 $row = mysqli_fetch_array($result);
@@ -27,15 +27,15 @@ if($row ['id']==$id && $row ['status']==1)
      
      $cost=$_POST['cost'];
      
-     mysqli_query($con,"UPDATE `BookMe`.`$from_table` set bus_name='$name' where bus_num='$bus_num'");
-     mysqli_query($con,"UPDATE `BookMe`.`$from_table` set bus_type='$type' where bus_num='$bus_num'");
-     mysqli_query($con,"UPDATE `BookMe`.`$from_table` set ph_no='$ph_no' where bus_num='$bus_num'");
-     mysqli_query($con,"UPDATE `BookMe`.`$from_table` set destination='$des' where bus_num='$bus_num'");
-     mysqli_query($con,"UPDATE `BookMe`.`$from_table` set date='$date' where bus_num='$bus_num'");
-     mysqli_query($con,"UPDATE `BookMe`.`$from_table` set start_time='$start' where bus_num='$bus_num'");
-     mysqli_query($con,"UPDATE `BookMe`.`$from_table` set end_time='$end' where bus_num='$bus_num'");
-     mysqli_query($con,"UPDATE `BookMe`.`$from_table` set seat='$rn' where bus_num='$bus_num'");
-     mysqli_query($con,"UPDATE `BookMe`.`$from_table` set cost='$cost' where bus_num='$bus_num'");
+     mysqli_query($con,"UPDATE `BookIt`.`$from_table` set bus_name='$name' where bus_num='$bus_num'");
+     mysqli_query($con,"UPDATE `BookIt`.`$from_table` set bus_type='$type' where bus_num='$bus_num'");
+     mysqli_query($con,"UPDATE `BookIt`.`$from_table` set ph_no='$ph_no' where bus_num='$bus_num'");
+     mysqli_query($con,"UPDATE `BookIt`.`$from_table` set destination='$des' where bus_num='$bus_num'");
+     mysqli_query($con,"UPDATE `BookIt`.`$from_table` set date='$date' where bus_num='$bus_num'");
+     mysqli_query($con,"UPDATE `BookIt`.`$from_table` set start_time='$start' where bus_num='$bus_num'");
+     mysqli_query($con,"UPDATE `BookIt`.`$from_table` set end_time='$end' where bus_num='$bus_num'");
+     mysqli_query($con,"UPDATE `BookIt`.`$from_table` set seat='$rn' where bus_num='$bus_num'");
+     mysqli_query($con,"UPDATE `BookIt`.`$from_table` set cost='$cost' where bus_num='$bus_num'");
      header("location:editAdmin.php");
 }
 ?>

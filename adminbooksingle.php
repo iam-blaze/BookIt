@@ -6,7 +6,7 @@ $id1 = $_SESSION['username'];
 $from_table = $_SESSION['from_table'];
 $bus_num = filter_input(INPUT_POST, 'bus_num');
 
-$con = mysqli_connect("localhost","root","","BookMe");
+$con = mysqli_connect("localhost","root","","BookIt");
 
 $result = mysqli_query($con,"select * from user_table where id='$id'") or die(mysql_error());
 $row = mysqli_fetch_array($result);
@@ -31,7 +31,7 @@ if($row ['id']=="administrator" && $row ['status']==1)
             $rn= rand(1, 20);
        
             
-            $sql="INSERT INTO `BookMe`.`ride_table` (`id`, `bus_num`, `bus_name`, `bus_type`, `ph_no`, `from_table`, `destination`, `date`, `start_time`, `end_time`, `rating`,`seat`, `cost`) VALUES ('$id1', '$num', '$name', '$type', '$ph', '$frm', '$des', '$date', '$start', '$end', '$rating','$rn','$cost')";
+            $sql="INSERT INTO `BookIt`.`ride_table` (`id`, `bus_num`, `bus_name`, `bus_type`, `ph_no`, `from_table`, `destination`, `date`, `start_time`, `end_time`, `rating`,`seat`, `cost`) VALUES ('$id1', '$num', '$name', '$type', '$ph', '$frm', '$des', '$date', '$start', '$end', '$rating','$rn','$cost')";
             mysqli_query($con, $sql);           
             echo "<script type='text/javascript'>if (confirm('Booked successfully') == true) {window.location = \"newRide.php\"}</script>";
       }
